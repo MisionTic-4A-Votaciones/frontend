@@ -31,6 +31,16 @@ const routes: Routes = [{
       .then(m => m.TableModule),
     },
     {
+      path: 'resultados',
+      loadChildren: () => import('./results/results.module')
+      .then(m => m.ResultsModule),
+    },
+    {
+      path: 'reportes',
+      loadChildren: () => import('./reports/reports.module')
+      .then(m => m.ReportsModule),
+    },
+    {
       path: 'dashboard',
       component: ECommerceComponent,
     },
