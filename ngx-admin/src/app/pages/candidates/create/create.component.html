@@ -1,1 +1,51 @@
-<p>create works for candidates!</p>
+<div class="row">
+    <div class="col-lg-12">
+        <nb-card>
+            <nb-card-header *ngIf="creationMode">
+                CREAR CANDIDATO
+            </nb-card-header>
+            <nb-card-header *ngIf="!creationMode">
+                ACTUALIZAR CANDIDATO
+            </nb-card-header>
+            <nb-card-body>
+                <div class="row">
+                    <div class="col-lg-3">
+                        <label>Cédula</label>
+                    </div>
+                    <div class="col-lg-9">
+                        <input type="text" class="form-control" [disabled]="!creationMode"
+                            [(ngModel)]="candidate.personal_id">
+                        <p *ngIf="sendingAttemp && candidate.personal_id==''">Requerido</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-3">
+                        <label>Nombre</label>
+                    </div>
+                    <div class="col-lg-9">
+                        <input type="text" class="form-control" [(ngModel)]="candidate.name">
+                        <p *ngIf="sendingAttemp && candidate.name==''">Requerido</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-3">
+                        <label>Apellido</label>
+                    </div>
+                    <div class="col-lg-9">
+                        <input type="text" class="form-control" [(ngModel)]="candidate.lastname">
+                        <p *ngIf="sendingAttemp && candidate.lastname==''">Requerido</p>
+                    </div>
+                </div>
+                <br />
+                <div class="row">
+                    <button *ngIf="creationMode" class="btn btn-primary btn-block" (click)="create()">
+                        Crear
+                    </button>
+                    <button *ngIf="!creationMode" class="btn btn-primary btn-block" (click)="edit()">
+                        Actualizar
+                    </button>
+                </div>
+            </nb-card-body>
+        </nb-card>
+    </div>
+</div>
