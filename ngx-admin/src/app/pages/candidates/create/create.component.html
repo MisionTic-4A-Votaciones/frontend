@@ -36,6 +36,15 @@
                         <p *ngIf="sendingAttemp && candidate.lastname==''">Requerido</p>
                     </div>
                 </div>
+                <div class="row">
+                    <div class="col-lg-3">
+                        <label>Resolución</label>
+                    </div>
+                    <div class="col-lg-9">
+                        <input type="text" class="form-control" [(ngModel)]="candidate.resolution_id">
+                        <p *ngIf="sendingAttemp && candidate.resolution_id==''">Requerido</p>
+                    </div>
+                </div>
                 <br />
                 <div class="row">
                     <button *ngIf="creationMode" class="btn btn-primary btn-block" (click)="create()">

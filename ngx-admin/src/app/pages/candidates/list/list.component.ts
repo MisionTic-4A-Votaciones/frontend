@@ -13,7 +13,7 @@ import { CandidatesService } from '../../../services/candidates.service';
 })
 export class ListComponent implements OnInit {
 
-  columnNames: string[] = ['Cédula', 'Nombres', 'Apellidos', 'Opciones'];
+  columnNames: string[] = ['Cédula', 'Nombres', 'Apellidos', 'Resolución','Opciones'];
   candidates: Candidate[];
 
   constructor(private candidateService: CandidatesService, private router: Router) { }

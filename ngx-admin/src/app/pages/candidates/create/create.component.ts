@@ -30,7 +30,7 @@ export class CreateComponent implements OnInit {
       this.creationMode = false;
       this.candidateId = this.activatedRouted.snapshot.params.candidateId;
       this.getCandidate(this.candidateId);
-      
+
     }
     else{
       //crear
@@ -53,7 +53,7 @@ export class CreateComponent implements OnInit {
   
   validateMandatoryData(): boolean {
     this.sendingAttemp = true;
-    if(this.candidate.personal_id=="" || this.candidate.name=="" || this.candidate.lastname=="")
+    if(this.candidate.personal_id=="" || this.candidate.name=="" || this.candidate.lastname=="" || this.candidate.resolution_id=="")
       return false;
     else
       return true;

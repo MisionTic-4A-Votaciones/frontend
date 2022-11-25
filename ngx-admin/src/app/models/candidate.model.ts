@@ -3,4 +3,5 @@ export class Candidate {
     name?: string;
     lastname?: string;
     personal_id?: string;
+    resolution_id?: string;
 }
