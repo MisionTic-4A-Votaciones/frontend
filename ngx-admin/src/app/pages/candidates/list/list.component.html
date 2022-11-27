@@ -13,18 +13,24 @@
                 </tr>
                 <ng-container *ngFor="let candidate of candidates">
                     <tr>
+<<<<<<< HEAD
                         <td>{{candidate.cedula}}</td> <!--ojo con estos nombres no estoy segura que sean estos-->
                         <td>{{candidate.nombre}}</td>
                         <td>{{candidate.apellido}}</td>
                         <td>{{candidate.num_resolucion}}</td>
                         <td>{{candidate.party.name}}</td>
+=======
+                        <td>{{candidate.personal_id}}</td> <! –– ojo con estos nombres no estoy segura que sean estos––>
+                        <td>{{candidate.name}}</td>
+                        <td>{{candidate.lastname}}</td>
+                        <td>{{candidate.resolution_id}}</td>
+>>>>>>> ab9db7cfdba1e94cf998641a68f57f8944b2140e
                         <td>
                             <button type="button" class="btn btn-primary" (click)="edit(candidate._id)">
                                 <i class="fas fa-pencil-alt"></i>
-
                             </button>
-                            <button>
-
+                            <button type="button class btn btn-danger" (click)="delete(candidate._id)"> 
+                                <i class="fas fa-solid fa-trash"></i>
                             </button>
                         </td>
                     </tr>

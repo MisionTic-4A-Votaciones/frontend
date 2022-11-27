@@ -3,6 +3,7 @@
         <nb-card>
             <nb-card-header *ngIf="creationMode">
                 CREAR CANDIDATO
+<<<<<<< HEAD
             </nb-card-header> 
             <nb-card-header *ngIf="!creationMode">
                 ACTUALIZAR CANDIDATO
@@ -16,16 +17,39 @@
                         <input type="text" class="form-control" 
                                [(ngModel)]="candidate.cedula" fullWidth />
                         <p *ngIf="sendingAttemp && candidate.cedula==''">Requerido</p>
+=======
+            </nb-card-header>
+            <nb-card-header *ngIf="!creationMode">
+                ACTUALIZAR CANDIDATO
+            </nb-card-header>
+            <nb-card-body>
+                <div class="row">
+                    <div class="col-lg-3">
+                        <label>Cédula</label>
+                    </div>
+                    <div class="col-lg-9">
+                        <input type="text" class="form-control" [disabled]="!creationMode"
+                            [(ngModel)]="candidate.personal_id">
+                        <p *ngIf="sendingAttemp && candidate.personal_id==''">Requerido</p>
+>>>>>>> ab9db7cfdba1e94cf998641a68f57f8944b2140e
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-lg-3">
+<<<<<<< HEAD
                         <label>nombre</label>
                     </div>
                     <div class="col-lg-9">
                         <input type="text" class="form-control"
                                [(ngModel)]="candidate.nombre" fullWidth />
                         <p *ngIf="sendingAttemp && candidate.nombre==''">Requerido</p>
+=======
+                        <label>Nombre</label>
+                    </div>
+                    <div class="col-lg-9">
+                        <input type="text" class="form-control" [(ngModel)]="candidate.name">
+                        <p *ngIf="sendingAttemp && candidate.name==''">Requerido</p>
+>>>>>>> ab9db7cfdba1e94cf998641a68f57f8944b2140e
                     </div>
                 </div>
                 <div class="row">
@@ -33,13 +57,19 @@
                         <label>Apellido</label>
                     </div>
                     <div class="col-lg-9">
+<<<<<<< HEAD
                         <input type="text" class="form-control"
                                [(ngModel)]="candidate.apellido" fullWidth />
                         <p *ngIf="sendingAttemp && candidate.apellido==''">Requerido</p>
+=======
+                        <input type="text" class="form-control" [(ngModel)]="candidate.lastname">
+                        <p *ngIf="sendingAttemp && candidate.lastname==''">Requerido</p>
+>>>>>>> ab9db7cfdba1e94cf998641a68f57f8944b2140e
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-lg-3">
+<<<<<<< HEAD
                         <label>Numero de resolucion</label>
                     </div>
                     <div class="col-lg-9">
@@ -57,6 +87,13 @@
                             <option *ngFor="let party of parties" [value]="party._id">{{party.nombre}}</option>
                         </select>
                         <p *ngIf="sendingAttemp && candidate.party._id==''">Requerido</p>
+=======
+                        <label>Resolución</label>
+                    </div>
+                    <div class="col-lg-9">
+                        <input type="text" class="form-control" [(ngModel)]="candidate.resolution_id">
+                        <p *ngIf="sendingAttemp && candidate.resolution_id==''">Requerido</p>
+>>>>>>> ab9db7cfdba1e94cf998641a68f57f8944b2140e
                     </div>
                 </div>
                 <br />
@@ -68,8 +105,15 @@
                         Actualizar
                     </button>
                 </div>
+<<<<<<< HEAD
 
             </nb-card-body>
         </nb-card>
     </div>
 </div>
+=======
+            </nb-card-body>
+        </nb-card>
+    </div>
+</div>
+>>>>>>> ab9db7cfdba1e94cf998641a68f57f8944b2140e

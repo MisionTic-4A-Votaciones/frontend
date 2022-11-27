@@ -12,7 +12,11 @@ export class SecurityService {
   user = new BehaviorSubject<User>(new User());
 
   constructor(private http: HttpClient,
+<<<<<<< HEAD
     private router: Router) {
+=======
+    private router: Router) { 
+>>>>>>> ab9db7cfdba1e94cf998641a68f57f8944b2140e
       this.verifyCurrentSession();
     }
 
