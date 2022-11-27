@@ -1,1 +1,53 @@
-<p>create works!</p>
+<div class="row">
+    <div class="col-lg-12">
+        <nb-card>
+            <nb-card-header *ngIf="creationMode">
+                CREAR RESULTADO
+            </nb-card-header>
+            <nb-card-header *ngIf="!creationMode">
+                ACTUALIZAR RESULTADO
+            </nb-card-header>
+            <nb-card-body>
+                <div class="row">
+                    <div class="col-lg-3">
+                        <label>Voto</label>
+                    </div>
+                    <div class="col-lg-9">
+                        <input  type="text" class="form-control" 
+                                [(ngModel)]="party.name">
+                        <p *ngIf="sendingAttemp && party.name==''">Requerido</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-3">
+                        <label>Numero de mesa</label>
+                    </div>
+                    <div class="col-lg-9">
+                        <input  type="text" class="form-control" 
+                                [(ngModel)]="party.name">
+                        <p *ngIf="sendingAttemp && party.name==''">Requerido</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-3">
+                        <label>Nombre del candidato</label>
+                    </div>
+                    <div class="col-lg-9">
+                        <input  type="text" class="form-control" 
+                                [(ngModel)]="party.name">
+                        <p *ngIf="sendingAttemp && party.name==''">Requerido</p>
+                    </div>
+                </div>
+                <br />
+                <div class="row">
+                    <button *ngIf="creationMode" class="btn btn-primary btn-block" (click)="create()">
+                        Crear
+                    </button>
+                    <button *ngIf="!creationMode" class="btn btn-primary btn-block" (click)="edit()">
+                        Actualizar
+                    </button>
+                </div>
+            </nb-card-body>
+        </nb-card>
+    </div>
+</div>

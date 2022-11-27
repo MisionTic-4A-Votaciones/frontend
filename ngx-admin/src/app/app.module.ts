@@ -46,7 +46,7 @@
      provide: HTTP_INTERCEPTORS,
      useClass: TokenInterceptor,
      multi: true
-   }],
+   }]
  })
  export class AppModule {
  }

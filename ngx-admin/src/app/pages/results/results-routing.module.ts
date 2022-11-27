@@ -12,6 +12,10 @@ const routes: Routes = [
     path: 'crear',
     component: CreateComponent,
   },
+  {
+    path: 'actualizar/:resultId',
+    component: CreateComponent,
+  },
 ];
 
 @NgModule({

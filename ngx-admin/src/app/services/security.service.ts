@@ -12,7 +12,9 @@ export class SecurityService {
   user = new BehaviorSubject<User>(new User());
 
   constructor(private http: HttpClient,
-    private router: Router) { }
+    private router: Router) {
+      this.verifyCurrentSession();
+    }
 
   public get userCurrentSession(): User {
     /**
@@ -47,7 +49,7 @@ export class SecurityService {
      *
      */
      // console.log(sessionData);
-    const userData: User = {
+    let userData: User = {
       /**
        *
        */
@@ -62,7 +64,7 @@ export class SecurityService {
     /**
      *
      */
-    const currentSession = localStorage.getItem('session');
+    let currentSession = localStorage.getItem('session');
     return currentSession;
   }
 
@@ -70,7 +72,7 @@ export class SecurityService {
     /**
      *
      */
-    const currentSession = this.getSessionData();
+    let currentSession = this.getSessionData();
     if (currentSession)
       this.setUser(JSON.parse(currentSession));
   }
@@ -79,7 +81,7 @@ export class SecurityService {
     /**
      * Verify session
      */
-    const currentSession = this.getSessionData();
+    let currentSession = this.getSessionData();
     return (currentSession) ? true : false;
   }
 
