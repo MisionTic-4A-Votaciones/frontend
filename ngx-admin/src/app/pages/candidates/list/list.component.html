@@ -13,9 +13,11 @@
                 </tr>
                 <ng-container *ngFor="let candidate of candidates">
                     <tr>
-                        <td>{{candidate.cedula}}</td> <! –– ojo con estos nombres no estoy segura que sean estos––>
+                        <td>{{candidate.cedula}}</td> <!--ojo con estos nombres no estoy segura que sean estos-->
                         <td>{{candidate.nombre}}</td>
                         <td>{{candidate.apellido}}</td>
+                        <td>{{candidate.num_resolucion}}</td>
+                        <td>{{candidate.party.name}}</td>
                         <td>
                             <button type="button" class="btn btn-primary" (click)="edit(candidate._id)">
                                 <i class="fas fa-pencil-alt"></i>

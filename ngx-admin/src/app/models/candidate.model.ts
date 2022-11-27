@@ -5,5 +5,6 @@ export class Candidate {
     apellido?: string;
     cedula?: string;
     nombre?: string;
+    num_resolucion?: string;
     party?: Party;
 }

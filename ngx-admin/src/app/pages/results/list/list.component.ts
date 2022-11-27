@@ -15,7 +15,8 @@ export class ListComponent implements OnInit {
   columnNames: string[] = ['Votos', 'Mesa', 'Candidato', 'Opciones'];
   results: Result[];
 
-  constructor(private resultService: ResultsService, private router: Router) { }
+  constructor(private resultService: ResultsService, 
+              private router: Router) { }
 
   ngOnInit(): void {
     this.list();

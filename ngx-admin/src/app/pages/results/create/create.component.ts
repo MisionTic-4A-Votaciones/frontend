@@ -1,8 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import Swal from 'sweetalert2';
+import { Candidate } from '../../../models/candidate.model';
 import { Result } from '../../../models/result.model';
+import { Table } from '../../../models/table.model';
+import { CandidatesService } from '../../../services/candidates.service';
 import { ResultsService } from '../../../services/results.service';
+import { TableService } from '../../../services/table.service';
+
 
 @Component({
   selector: 'ngx-create',
@@ -15,24 +20,36 @@ export class CreateComponent implements OnInit {
   sendingAttemp: boolean = false;
   resultId: string = "";
   result: Result = {
-    name: "",
+    votos: null,
+    table: {
+      _id: null
+    },
+    candidate: {
+      _id: null
+    },
   }
+  table: Table[];
+  candidates: Candidate[];
 
   constructor(private resultsService: ResultsService,
+              private tableService: TableService,
+              private candidatesService: CandidatesService,
               private activatedRoute: ActivatedRoute,
               private router: Router) { }
 
   ngOnInit(): void {
+    this.getTable()
+    this.getCandidates();
     if(this.activatedRoute.snapshot.params.resultId){
       this.creationMode = false;
       this.resultId = this.activatedRoute.snapshot.params.resultId;
-      this.getParty(this.resultId);
+      this.getResult(this.resultId);
     }
     else
       this.creationMode = true;
   }
 
-  getParty(id: string): void {
+  getResult(id: string): void {
     this.resultsService.getOne(id).subscribe(
       data => {
         this.result = data;
@@ -43,9 +60,31 @@ export class CreateComponent implements OnInit {
     );
   }
 
+  getTable(): void {
+    this.tableService.list().subscribe(
+      data => {
+        this.table = data;
+      },
+      error => {
+        console.log(error);
+      }
+    )
+  }
+
+  getCandidates(): void {
+    this.candidatesService.list().subscribe(
+      data => {
+        this.candidates = data;
+      },
+      error => {
+        console.log(error);
+      }
+    )
+  }
+
   validateMandatoryData(): boolean {
     this.sendingAttemp = true;
-    if(this.result.name=="")
+    if(this.result.votos==null)
       return false;
     else
       return true;

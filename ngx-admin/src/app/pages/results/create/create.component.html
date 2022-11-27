@@ -10,32 +10,12 @@
             <nb-card-body>
                 <div class="row">
                     <div class="col-lg-3">
-                        <label>Voto</label>
+                        <label>Votos</label>
                     </div>
                     <div class="col-lg-9">
-                        <input  type="text" class="form-control" 
-                                [(ngModel)]="party.name">
-                        <p *ngIf="sendingAttemp && party.name==''">Requerido</p>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-3">
-                        <label>Numero de mesa</label>
-                    </div>
-                    <div class="col-lg-9">
-                        <input  type="text" class="form-control" 
-                                [(ngModel)]="party.name">
-                        <p *ngIf="sendingAttemp && party.name==''">Requerido</p>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-3">
-                        <label>Nombre del candidato</label>
-                    </div>
-                    <div class="col-lg-9">
-                        <input  type="text" class="form-control" 
-                                [(ngModel)]="party.name">
-                        <p *ngIf="sendingAttemp && party.name==''">Requerido</p>
+                        <input  type="number" class="form-control" 
+                                [(ngModel)]="result.votos">
+                        <p *ngIf="sendingAttemp && result.votos==null">Requerido</p>
                     </div>
                 </div>
                 <br />

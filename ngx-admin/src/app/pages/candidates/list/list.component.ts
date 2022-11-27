@@ -13,7 +13,7 @@ import { CandidatesService } from '../../../services/candidates.service';
 })
 export class ListComponent implements OnInit {
 
-  columnNames: string[] = ['Cédula', 'Nombres', 'Apellidos', 'Opciones'];
+  columnNames: string[] = ['Cédula', 'Nombres', 'Apellidos', 'Resolución','Opciones'];
   candidates: Candidate[];
 
   constructor(private candidateService: CandidatesService, private router: Router) { }
@@ -46,7 +46,7 @@ export class ListComponent implements OnInit {
   delete(id: string): void {
     Swal.fire({
       title: 'Eliminar candidato',
-      text: '¿Está seguro que desea eliminar al estudiante',
+      text: '¿Está seguro que desea eliminar al candidato',
       icon: 'warning',
       showCancelButton: true,
       confirmButtonColor: '#3085DG',
